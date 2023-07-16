@@ -1,7 +1,17 @@
 import express from 'express';
 const app = express();
 import {PORT} from "../config";
-import { database } from '../db';
+
+import {authRoutes} from "../routes/auth"
+
+
+// routes
+app.use("/auth", authRoutes)
+
+
+
+
+
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
