@@ -10,17 +10,14 @@ import {requireAuthenticatedUser} from "../middleware/security"
 
 export const authRoutes = express.Router()
 
-
+/** Registration Route - registers a new volunteer or organization */
 authRoutes.post("/register", async function(req, res, next){
-    console.log('eday')
     try {
         const {userType: user_type} = req.body
         console.log(user_type)
         if (user_type=="volunteer"){
             const volunteer = await Volunteer.register(req.body)
             const token = createUserJwt(volunteer)
-            console.log(token)
-            console.log('edayy')
             return res.status(201).json({user: volunteer, token: token})
         }
         else if (user_type=="organization"){

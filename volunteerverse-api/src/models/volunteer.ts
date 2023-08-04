@@ -37,9 +37,6 @@ export class Volunteer {
   }
 
 
-
-  //interface??? could be useful to define types
-
   /**
    * Register volunteer with their information in the database
    * @param volunteerInfo
@@ -361,7 +358,6 @@ static async getVolunteerByEmail(email : string){
     return result.rows[0];
   }
   throw new BadRequestError(`no volunteer exists with the following email: ${email}`);
-
 }
 
 }
