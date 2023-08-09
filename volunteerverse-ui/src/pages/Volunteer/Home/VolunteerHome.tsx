@@ -3,7 +3,6 @@ import {
   Button,
   Divider,
   Title,
-  Space,
   createStyles,
   useMantineTheme,
   Text,
